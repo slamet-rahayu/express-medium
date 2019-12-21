@@ -1,7 +1,7 @@
 require('express-group-routes')
 const express = require('express')
 const app = express()
-const port = 8090
+const port = process.env.PORT || 8090
 const bodyParser = require('body-parser')
 const UserController = require('./controller/users')
 const AuthController= require('./controller/auth')
