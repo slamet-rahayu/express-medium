@@ -15,6 +15,8 @@ app.use(express.static('public'));
 
 app.use(bodyParser.json())
 
+app.use(bodyParser.urlencoded({extended: false}))
+
 app.use(cors())
 
 app.group('/api/v1', (router) => {
@@ -35,6 +37,7 @@ app.group('/api/v1', (router) => {
 
     //routing for Users
     router.post('/login', AuthController.login)
+    router.post('/register', AuthController.register)
 
     //comment
     router.get('/comment', CommentController.index)
