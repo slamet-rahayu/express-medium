@@ -20,7 +20,9 @@ exports.show = (req, res) => {
                 model: User
             }]
         }]
-    }).then(cat=> res.send(cat))
+    })
+    .then(cat=> res.send(cat))
+    .catch(err=>res.send(err))
 }
 
 exports.sort = (req, res) => {
@@ -73,7 +75,7 @@ exports.store = (req, res) => {
 }
 
 exports.update = (req,res) => {
-    Articles.update(
+    users.update(
         req.body, {where: {id: req.params.id}}
     ).then(article=> {
         res.send({
