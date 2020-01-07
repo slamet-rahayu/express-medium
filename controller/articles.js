@@ -33,7 +33,7 @@ exports.sort = (req, res) => {
         order: [
             [Articles, 'createdAt', 'desc']
         ]
-    }).then(late=> res.send(late))
+    }).then(late=> res.send(late)).catch(err=> res.send("error : ",err))
 }
 
 exports.article = (req, res) => {
